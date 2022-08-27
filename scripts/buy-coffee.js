@@ -1,8 +1,8 @@
-import { waffle, ethers } from "hardhat";
+const { ethers } = require("hardhat");
 
 // Get balance of a particular address.
 async function getBalance(address) {
-  const balanceBN = await waffle.provider.getBalance(address);
+  const balanceBN = await ethers.provider.getBalance(address);
   return ethers.utils.formatEther(balanceBN);
 }
 
@@ -29,7 +29,40 @@ function printMemos(memos) {
   }
 }
 
-async function main() {}
+async function main() {
+  // Get example accounts.
+  const [owner, tipper1, tipper2, tipper3] = await ethers.getSigners();
+
+  // Get the contract to deploy.
+  const BuyMeACoffee = await ethers.getContractFactory("BuyMeACoffee");
+
+  // Deploy contract.
+  const buyMeACoffee = await BuyMeACoffee.deploy();
+  await buyMeACoffee.deployed();
+  console.log("BuyMeACoffee is deployed to ", buyMeACoffee.address);
+
+  // Check the balances before the coffee purchase.
+  const addresses = [
+    owner.address,
+    tipper1.address,
+    tipper2.address,
+    tipper3.address,
+  ];
+
+  console.log("<--- Start --->");
+  await printBalances(addresses);
+  console.log("<---- End ---->");
+
+  // Buy a few coffees for the owner.
+
+  // Check balances again.
+
+  // Withdraw funds.
+
+  // Check balances after withdraw.
+
+  // Read all the memos left for the owner.
+}
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
