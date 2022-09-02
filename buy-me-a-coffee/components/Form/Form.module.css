@@ -1,0 +1,32 @@
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 40px auto;
+  flex-direction: column;
+  font-family: monospace;
+  border: 1px solid #fff;
+  max-width: 350px;
+  padding: 10px 40px 40px 40px;
+}
+
+.input {
+  padding: 10px;
+  font-family: monospace;
+  margin-bottom: 20px;
+  width: 300px;
+  max-width: 300px;
+}
+
+.formInput {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.formLabel {
+  font-size: 1.25rem;
+  margin-bottom: 5px;
+}

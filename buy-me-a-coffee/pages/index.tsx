@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Form from "../components/Form/Form";
 import Header from "../components/Header/Header";
 
 const Home: NextPage = () => {
@@ -12,6 +13,8 @@ const Home: NextPage = () => {
       </Head>
 
       <Header />
+
+      <Form />
     </div>
   );
 };
