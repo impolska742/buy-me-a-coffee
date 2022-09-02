@@ -3,6 +3,8 @@ pragma solidity ^0.8.0;
 
 import "hardhat/console.sol";
 
+// Deployed to Rinkeby at 0x3b5b60f2446317A50c3675BCF5DCb6b7715b4DCF
+
 contract BuyMeACoffee {
     // Event to emit when a Memo is created.
     event NewMemo(
@@ -20,10 +22,10 @@ contract BuyMeACoffee {
         string message;
     }
 
-    // List of all memos received. 
-    Memo[] memos;  
+    // List of all memos received.
+    Memo[] memos;
 
-    // Address of the contract owner 
+    // Address of the contract owner
     // This address will collect all the donations.
     address payable owner;
 
@@ -38,24 +40,17 @@ contract BuyMeACoffee {
      @param _message a nice message from the coffee buyer. 
      */
 
-    function buyCoffee(string memory _name, string memory _message) public payable {
+    function buyCoffee(string memory _name, string memory _message)
+        public
+        payable
+    {
         require(msg.value > 0, "Can't buy coffee with 0 eth");
 
         // Add the memo to storage
-        memos.push(Memo(
-            msg.sender, 
-            block.timestamp, 
-            _name, 
-            _message
-        ));
+        memos.push(Memo(msg.sender, block.timestamp, _name, _message));
 
         // Emit the new memo
-        emit NewMemo(
-            msg.sender, 
-            block.timestamp,
-            _name,
-            _message
-        );
+        emit NewMemo(msg.sender, block.timestamp, _name, _message);
     }
 
     /**
@@ -65,7 +60,10 @@ contract BuyMeACoffee {
 
     function withdrawTips() public {
         require(owner == msg.sender, "Only owner can call this function");
-        require(owner.send(address(this).balance), "An error occurred while sending the money to the owner");
+        require(
+            owner.send(address(this).balance),
+            "An error occurred while sending the money to the owner"
+        );
     }
 
     /**
