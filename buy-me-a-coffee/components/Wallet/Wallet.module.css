@@ -1,0 +1,26 @@
+.wallet {
+  position: relative;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.walletBalance {
+  margin: 0px;
+  font-family: monospace;
+  width: fit-content;
+}
+
+.image {
+  width: 45px;
+  height: 45px;
+  background-color: rgb(226, 128, 128);
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.connectWalletButton {
+  position: relative;
+  margin: 0px auto;
+}
