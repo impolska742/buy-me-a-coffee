@@ -8,7 +8,7 @@
   font-family: monospace;
   border: 1px solid #fff;
   max-width: 350px;
-  padding: 10px 40px 40px 40px;
+  padding: 10px 40px 20px 40px;
 }
 
 .input {
@@ -29,4 +29,8 @@
 .formLabel {
   font-size: 1.25rem;
   margin-bottom: 5px;
+}
+
+.buyCoffeeButton {
+  cursor: pointer;
 }
