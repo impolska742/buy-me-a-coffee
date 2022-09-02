@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  position: relative;
+  max-width: 50px;
+  max-height: 50px !important;
+  margin: 10px;
+  max-height: fit-content;
+  overflow: hidden;
+  border-radius: 50%;
+}
