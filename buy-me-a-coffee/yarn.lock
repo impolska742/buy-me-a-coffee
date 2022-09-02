@@ -509,7 +509,7 @@
     "@ethersproject/rlp" "^5.7.0"
     "@ethersproject/signing-key" "^5.7.0"
 
-"@ethersproject/units@5.7.0":
+"@ethersproject/units@^5.7.0", "@ethersproject/units@5.7.0":
   "integrity" "sha512-pD3xLMy3SJu9kG5xDGI7+xhTEmGXlEqXU4OfNapmfnxLVY4EMSSRp7j1k7eezutBPH7RBN/7QPnwR7hzNlEFeg=="
   "resolved" "https://registry.npmjs.org/@ethersproject/units/-/units-5.7.0.tgz"
   "version" "5.7.0"
@@ -1405,7 +1405,7 @@
   "resolved" "https://registry.npmjs.org/esutils/-/esutils-2.0.3.tgz"
   "version" "2.0.3"
 
-"ethers@*":
+"ethers@*", "ethers@^5.7.0":
   "integrity" "sha512-5Xhzp2ZQRi0Em+0OkOcRHxPzCfoBfgtOQA+RUylSkuHbhTEaQklnYi2hsWbRgs3ztJsXVXd9VKBcO1ScWL8YfA=="
   "resolved" "https://registry.npmjs.org/ethers/-/ethers-5.7.0.tgz"
   "version" "5.7.0"

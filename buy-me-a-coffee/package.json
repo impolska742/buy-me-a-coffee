@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ethersproject/units": "^5.7.0",
     "@usedapp/core": "^1.1.5",
     "axios": "^0.27.2",
+    "ethers": "^5.7.0",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"

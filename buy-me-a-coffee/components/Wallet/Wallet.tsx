@@ -1,17 +1,31 @@
 import React from "react";
 import styles from "./Wallet.module.css";
+import { formatEther } from "@ethersproject/units";
+import { useEthers, useEtherBalance } from "@usedapp/core";
 
 const Wallet = () => {
-  return true ? (
+  const { activateBrowserWallet, deactivate, account } = useEthers();
+  const userBalance = useEtherBalance(account);
+
+  return account ? (
     <div className={styles.wallet}>
       <div className={styles.image}></div>
       <div className={styles.balanceBox}>
         <p className={styles.walletBalance}>Balance :-</p>
-        <h1 className={styles.walletBalance}>0.0001Eth</h1>
+        <h1 className={styles.walletBalance}>
+          {userBalance ? parseFloat(formatEther(userBalance)).toFixed(5) : ""}
+          Eth
+        </h1>
       </div>
+      <button onClick={() => deactivate()}>Disconnect Wallet</button>
     </div>
   ) : (
-    <button className={styles.connectWalletButton}>Connect Wallet</button>
+    <button
+      onClick={() => activateBrowserWallet()}
+      className={styles.connectWalletButton}
+    >
+      Connect Wallet
+    </button>
   );
 };
 

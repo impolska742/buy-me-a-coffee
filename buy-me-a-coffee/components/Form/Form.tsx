@@ -1,38 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Form.module.css";
-import axios from "axios";
-import { useEthers } from "@usedapp/core";
 
-const ETH_TO_USD_URL =
-  "https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,MATIC&tsyms=USD";
-
-const Form = () => {
+const Form = ({ rate }: any) => {
   const [message, setMessage] = useState<string>("");
   const [name, setName] = useState<string>("");
-  const { account: userWalletAddress, active, chainId, library } = useEthers();
-
-  const [rate, setRate] = useState({
-    eth: 0,
-    matic: 0,
-  });
-
-  const init = async () => {
-    const { data } = await axios.get(ETH_TO_USD_URL);
-    setRate({
-      eth: data.ETH.USD,
-      matic: data.MATIC.USD,
-    });
-  };
-
-  useEffect(() => {
-    init();
-    return () => {
-      setRate({
-        eth: 0,
-        matic: 0,
-      });
-    };
-  }, [chainId, active]);
 
   return (
     <form className={styles.form}>
