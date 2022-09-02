@@ -9,13 +9,15 @@ const Wallet = () => {
 
   return account ? (
     <div className={styles.wallet}>
-      <div className={styles.image}></div>
-      <div className={styles.balanceBox}>
-        <p className={styles.walletBalance}>Balance :-</p>
-        <h1 className={styles.walletBalance}>
-          {userBalance ? parseFloat(formatEther(userBalance)).toFixed(5) : ""}
-          Eth
-        </h1>
+      <div className={styles.walletTop}>
+        <div className={styles.image}></div>
+        <div className={styles.balanceBox}>
+          <p className={styles.walletBalance}>Balance :-</p>
+          <h1 className={styles.walletBalance}>
+            {userBalance ? parseFloat(formatEther(userBalance)).toFixed(5) : ""}
+            Eth
+          </h1>
+        </div>
       </div>
       <button onClick={() => deactivate()}>Disconnect Wallet</button>
     </div>
