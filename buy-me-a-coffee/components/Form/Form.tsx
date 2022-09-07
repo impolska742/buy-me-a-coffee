@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./Form.module.css";
 
 const Form = ({ rate }: any) => {
+  // Component State
   const [message, setMessage] = useState<string>("");
   const [name, setName] = useState<string>("");
 
