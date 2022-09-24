@@ -16,7 +16,7 @@ const Wallet = () => {
           <h1 className={styles.walletBalance}>
             {userBalance
               ? parseFloat(formatEther(userBalance)).toFixed(5)
-              : " - "}
+              : "0.00"}{" "}
             Eth
           </h1>
         </div>
