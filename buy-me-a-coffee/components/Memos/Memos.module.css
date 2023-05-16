@@ -1,0 +1,47 @@
+.memos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.memo {
+  border: 1px solid #fafafa;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.profile {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message > p {
+  margin: 0;
+}
+
+.message > p:first-child {
+  font-size: 20px;
+}
+
+.time {
+  font-size: 10px;
+  margin: 0px 0px 0px auto;
+}
