@@ -47,7 +47,8 @@ const Memos = ({ refetch }: { refetch: boolean }) => {
                 <p>{memo.message}</p>
               </div>
               <div className={styles.time}>
-                {moment(myDate.toString()).format("ddd, h:mm A")}
+                <p>{moment(myDate.toString()).format("ddd Mo YYYY")}</p>
+                <p>{moment(myDate.toString()).format("hh:mm A")}</p>
               </div>
             </div>
           );
